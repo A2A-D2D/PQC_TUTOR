@@ -10,7 +10,7 @@ The PQC Agent works out of the box on any platform that supports `AGENTS.md`:
 2. **Open the repo** in your AI tool
 3. The tool automatically reads `AGENTS.md` and the database
 
-The knowledge base (`database/`) is plain Markdown — **no API keys, no servers, no dependencies.**
+The knowledge base (`database/`) is plain Markdown — **works with any LLM runtime that can read files.** You bring the model (Claude, GPT, etc.), this repo brings the verified PQC knowledge.
 
 ---
 

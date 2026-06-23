@@ -6,7 +6,7 @@
 
 # PQC Quickstart Tutor
 
-A teaching-oriented post-quantum cryptography agent for engineers and researchers. **Download. Open. Ask.** No API keys, no servers, no dependencies.
+A PQC teaching skill and knowledge base. **Drop into Claude Code, Codex, Cursor, Copilot, or any AGENTS.md-compatible AI tool** — and ask PQC questions. Works wherever your LLM runtime does.
 
 ## 🚀 Quick Start (5 seconds)
 
@@ -175,7 +175,7 @@ Apache License 2.0. See [LICENSE](LICENSE) for details. Third-party content noti
 
 # 后量子密码快速入门讲师
 
-面向工程师和研究人员的后量子密码教学智能体。**下载。打开。提问。** 无需 API 密钥，无需服务器，无需依赖。
+一个 PQC 教学 skill 和知识库。**放入 Claude Code、Codex、Cursor、Copilot 等支持 AGENTS.md 的 AI 工具中**即可使用。跟随你的 LLM runtime，不需要额外服务端。
 
 ## 🚀 五秒上手
 
