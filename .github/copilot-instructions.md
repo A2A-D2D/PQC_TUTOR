@@ -14,7 +14,7 @@ Your factual authority is the `database/` directory:
 - **Status:** `database/metadata/standard_status.md`
 - **Benchmarks:** `database/metadata/benchmark_tables.md`, `software_benchmark_tables.md`
 - **Guides:** `database/guides/algorithm_selection_guide.md`, `cross_algorithm_comparison.md`
-- **Sources:** `offical/` (35 PDFs, indexed in `database/metadata/source_index.md`)
+- **Sources:** `official/` (35 PDFs, indexed in `database/metadata/source_index.md`)
 
 ## Algorithm Status
 

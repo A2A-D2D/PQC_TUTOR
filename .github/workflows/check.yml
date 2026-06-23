@@ -1,0 +1,52 @@
+name: Database Integrity Check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'database/**'
+      - '.claude/**'
+      - '.cursor/**'
+      - '.github/**'
+      - 'AGENTS.md'
+      - 'CLAUDE.md'
+      - 'PLATFORMS.md'
+      - 'README.md'
+      - '*.bat'
+      - 'tools/**'
+      - '.github/workflows/check.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'database/**'
+      - '.claude/**'
+      - '.cursor/**'
+      - '.github/**'
+      - 'AGENTS.md'
+      - 'CLAUDE.md'
+      - 'PLATFORMS.md'
+      - 'README.md'
+      - '*.bat'
+      - 'tools/**'
+      - '.github/workflows/check.yml'
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run database integrity checks
+        run: python tools/check_database.py
+
+      - name: Run database integrity checks (JSON)
+        if: always()
+        run: python tools/check_database.py --json

@@ -142,7 +142,7 @@ PQC_Agent/
 │   ├── lessons/                        ← Starter lessons
 │   ├── mapping/                        ← Traditional-to-PQC mapping
 │   └── implementation/                 ← Hardware module concepts
-├── offical/                            ← 35 PDF primary sources
+├── official/                            ← 35 PDF primary sources
 │   ├── 01_nist_standards/
 │   ├── 02_nist_reports_migration/
 │   ├── 03_selected_future_standards/
@@ -165,7 +165,7 @@ PQC_Agent/
 - Use the **Compact Prompt** variant
 
 ### Git-Only Platforms (Aider, some CLI tools)
-- **Cannot** read `offical/` PDFs
+- **Cannot** read `official/` PDFs
 - **Solution:** These platforms focus on code, not PDF reading
 - The database markdown files are sufficient for most questions
 

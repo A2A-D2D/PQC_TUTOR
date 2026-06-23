@@ -44,10 +44,10 @@ All factual authority comes from these files (relative to repo root):
 ### Primary Sources
 | Directory | Contents |
 |-----------|----------|
-| `offical/01_nist_standards/` | FIPS 203, 204, 205 PDFs |
-| `offical/03_selected_future_standards/` | Falcon, HQC specs |
-| `offical/04_nist_additional_signatures_round3/` | 9 candidate PDFs |
-| `offical/05_china_related/` | Aigis, CTRU, NEV, Scloud+, LAC PDFs |
+| `official/01_nist_standards/` | FIPS 203, 204, 205 PDFs |
+| `official/03_selected_future_standards/` | Falcon, HQC specs |
+| `official/04_nist_additional_signatures_round3/` | 9 candidate PDFs |
+| `official/05_china_related/` | Aigis, CTRU, NEV, Scloud+, LAC PDFs |
 
 ## Algorithm Status Vocabulary
 

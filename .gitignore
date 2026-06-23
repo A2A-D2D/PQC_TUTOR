@@ -21,7 +21,6 @@
 
 # keep it local and do not upload to GitHub.
 
-offical/
 official/
 data/raw_pdf/
 data/raw/
@@ -32,7 +31,6 @@ corpus/raw/
 
 # Keep directory placeholders if needed
 
-!offical/.gitkeep
 !official/.gitkeep
 !data/raw_pdf/.gitkeep
 !data/raw/.gitkeep
@@ -101,6 +99,8 @@ logs/
 secrets.json
 credentials.json
 config.local.json
+settings.local.json
+.claude/settings.local.json
 
 # ------------------------------------------------------------
 

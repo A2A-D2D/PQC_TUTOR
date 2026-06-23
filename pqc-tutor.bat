@@ -4,7 +4,7 @@ REM Usage: pqc-tutor          (interactive)
 REM        pqc-tutor "query"   (one-shot question)
 REM Place this directory in PATH or create a desktop shortcut.
 
-cd /d D:\PQC_Agent\PQC_Agent
+cd /d "%~dp0"
 
 if "%~1"=="" (
     echo Starting PQC Quickstart Tutor...

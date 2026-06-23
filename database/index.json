@@ -1,0 +1,107 @@
+{
+  "name": "PQC Quickstart Tutor Database",
+  "version": "3",
+  "generated": "2026-06-23",
+  "description": "Index of all knowledge-base files in the PQC teaching agent database.",
+  "total_markdown_files": 38,
+  "categories": {
+    "metadata": {
+      "path": "database/metadata",
+      "description": "Parameter tables, benchmarks, status, and anti-hallucination rules",
+      "files": [
+        "parameter_tables.md",
+        "parameter_tables_extended.md",
+        "additional_signatures_round3_tables.md",
+        "benchmark_tables.md",
+        "software_benchmark_tables.md",
+        "standard_status.md",
+        "source_index.md",
+        "anti_hallucination_rules.md",
+        "facts_requiring_citation.md"
+      ]
+    },
+    "guides": {
+      "path": "database/guides",
+      "description": "Decision trees and cross-algorithm comparisons",
+      "files": [
+        "algorithm_selection_guide.md",
+        "cross_algorithm_comparison.md"
+      ]
+    },
+    "alg_cards": {
+      "path": "database/alg_cards",
+      "description": "One-page algorithm teaching cards (22 algorithms)",
+      "files": [
+        "mlkem_card.md",
+        "mldsa_card.md",
+        "slhdsa_card.md",
+        "falcon_card.md",
+        "falcon_fndsa_card.md",
+        "hqc_card.md",
+        "faest_card.md",
+        "hawk_card.md",
+        "mayo_card.md",
+        "mqom_card.md",
+        "qr_uov_card.md",
+        "sdith_card.md",
+        "snova_card.md",
+        "sqisign_card.md",
+        "uov_card.md",
+        "aigis_card.md",
+        "scloudplus_card.md",
+        "ctru_cntr_card.md",
+        "nev_card.md",
+        "china_related_card.md",
+        "additional_signatures_round3_overview.md",
+        "README.md"
+      ]
+    },
+    "lessons": {
+      "path": "database/lessons",
+      "description": "Starter lessons for PQC newcomers",
+      "files": [
+        "01_why_pqc.md",
+        "02_pqc_algorithm_map.md"
+      ]
+    },
+    "mapping": {
+      "path": "database/mapping",
+      "description": "Traditional-crypto to PQC concept mapping",
+      "files": [
+        "traditional_crypto_to_pqc.md"
+      ]
+    },
+    "implementation": {
+      "path": "database/implementation",
+      "description": "Hardware module concepts and implementation notes",
+      "files": [
+        "pqc_hardware_modules.md"
+      ]
+    },
+    "extraction_notes": {
+      "path": "database/extraction_notes",
+      "description": "Source PDF page references for data extraction",
+      "files": [
+        "source_pages.md"
+      ]
+    }
+  },
+  "algorithm_coverage": {
+    "fips_standards": ["ML-KEM (FIPS 203)", "ML-DSA (FIPS 204)", "SLH-DSA (FIPS 205)"],
+    "future_standards": ["Falcon/FN-DSA", "HQC"],
+    "round3_candidates": ["FAEST", "HAWK", "MAYO", "MQOM", "QR-UOV", "SDitH", "SNOVA", "SQIsign", "UOV"],
+    "china_research": ["Aigis-enc", "Aigis-sig", "Scloud+", "CTRU/CNTR", "NEV", "LAC"]
+  },
+  "source_pdfs": {
+    "total": 35,
+    "directory": "official",
+    "categories": [
+      "01_nist_standards (4 PDFs)",
+      "02_nist_reports_migration (6 PDFs)",
+      "03_selected_future_standards (3 PDFs)",
+      "04_nist_additional_signatures_round3 (9 PDFs)",
+      "05_china_related (9 PDFs)",
+      "06_general_surveys (3 PDFs)"
+    ]
+  }
+}

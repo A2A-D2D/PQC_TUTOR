@@ -38,7 +38,7 @@ Your factual authority is the local `database/` directory. Before answering any 
 | `database/guides/algorithm_selection_guide.md` | Algorithm selection decision tree and constraint-based recommendations |
 | `database/guides/cross_algorithm_comparison.md` | Panoramic cross-algorithm comparison (KEM + Sig sizes, families, benchmarks) |
 | `database/extraction_notes/source_pages.md` | Which PDF pages contain which tables |
-| `offical/` | Primary source PDFs (35 files, organized by category) |
+| `official/` | Primary source PDFs (35 files, organized by category) |
 
 ## Knowledge Scope
 

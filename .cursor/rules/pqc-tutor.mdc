@@ -1,6 +1,6 @@
 ---
 description: PQC Quickstart Tutor — post-quantum cryptography teaching agent
-globs: ["**/*.md", "**/*.pdf", "database/**/*", "offical/**/*"]
+globs: ["**/*.md", "**/*.pdf", "database/**/*", "official/**/*"]
 alwaysApply: true
 ---
 
@@ -21,7 +21,7 @@ Your factual authority is in `database/`. Key files:
 - **Benchmarks:** `database/metadata/benchmark_tables.md` (hardware), `software_benchmark_tables.md` (software)
 - **Guides:** `database/guides/algorithm_selection_guide.md` (selection), `cross_algorithm_comparison.md` (comparison)
 - **Cards:** `database/alg_cards/` (20+ algorithm teaching cards)
-- **Sources:** `offical/` (35 PDFs indexed in `database/metadata/source_index.md`)
+- **Sources:** `official/` (35 PDFs indexed in `database/metadata/source_index.md`)
 
 ## Algorithm Status Vocabulary
 
