@@ -1,5 +1,6 @@
 # Source Index
-This index records what each PDF in the uploaded `offical.zip` corpus may and may not be used for. It is designed to prevent the tutor agent from using survey notes as authoritative standards or inventing numeric claims.
+
+This index records what each PDF in the uploaded PDF corpus may and may not be used for. It is designed to prevent the tutor agent from using survey notes as authoritative standards or inventing numeric claims.
 ## Tier definitions
 - **Tier 0**: official NIST FIPS/SP/IR documents or NIST status material. Use for standards, standardization status, approved parameters, and migration guidance.
 - **Tier 1**: algorithm specifications for selected future standards or NIST additional-signature candidates. Use for candidate/spec details, not for claiming final standardization.

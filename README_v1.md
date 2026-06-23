@@ -1,6 +1,6 @@
 # PQC Database Metadata v1
 
-Generated from uploaded corpus: `offical.zip`.
+Generated from uploaded PDF corpus (originally `offical.zip`, now `official/`).
 
 This package is the first metadata layer for a PQC quickstart teaching agent. It does not duplicate the PDFs. It indexes the PDFs and creates guardrails so the agent can teach concepts without inventing numbers.
 
@@ -31,7 +31,7 @@ Expected layout:
 ```text
 pqc-quickstart-tutor/
 ├── database/
-│   ├── official/              # your PDF corpus, e.g. from offical.zip
+│   ├── official/              # your PDF corpus (local-only)
 │   ├── metadata/              # files from this package
 │   ├── alg_cards/
 │   ├── lessons/

@@ -37,7 +37,7 @@ The full `CLAUDE.md` (~200 lines) includes extended teaching examples and intera
 codex ./PQC-Tutor-Skill
 ```
 
-Codex is OpenAI's coding agent. It picks up `AGENTS.md` automatically, offering a similar project-context experience to Claude Code.
+Codex is OpenAI's coding agent. It reads `AGENTS.md` automatically and scans `.agents/skills/` for repo-scoped skills. This repo provides both — the universal agent definition at `AGENTS.md` and a dedicated skill at `.agents/skills/pqc-tutor/SKILL.md`.
 
 ---
 
