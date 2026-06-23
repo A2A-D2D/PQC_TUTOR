@@ -142,22 +142,36 @@ Agent note: NEV is best used as a research example of NTRU-style encryption/KEM 
 
 Source: PDFs under `04_nist_additional_signatures_round3/` and NIST status reports under `02_nist_reports_migration/`.
 
-Detailed parameter/key/signature-size tables have been extracted into:
+Full parameter tables with exact key/signature sizes and all parameter sets: **`database/metadata/additional_signatures_round3_tables.md`**.
 
-- `database/metadata/additional_signatures_round3_tables.md`
+All values below verified against source PDFs on 2026-06-23.
 
-Summary:
+### Summary index with size ranges
 
-| Candidate | Broad family / teaching bucket | Parameter table status | Detailed table location |
+| Candidate | Family | Sets | pk range (bytes) | sig range (bytes) | Status |
+|---|---|---|---|---|---|
+| FAEST | Symmetric (AES/Rijndael OWF + VOLEitH) | 12 (6 FAEST + 6 FAEST-EM) | 32 – 64 | 3906 – 26548 | ✅ |
+| HAWK | Lattice (NTRU hash-and-sign) | 3 (incl. 1 challenge) | 450 – 2440 | 249 – 1221 | ✅ |
+| MAYO | Multivariate (whipped OV) | 4 (MAYO1/2/3/5) | 1420 – 5554 (compact) | 186 – 964 | ✅ |
+| MQOM | Multivariate (MQ + MPCitH) | 12 (GF2/GF256 × short/fast) | 52 – 160 | 2820 – 17444 | ✅ |
+| QR-UOV | Multivariate (quotient-ring UOV) | 12 (3 recommended + 9 additional) | 12266 – 173676 | 157 – 807 | ✅ |
+| SDitH | Code-based (syndrome decoding itH) | 18 (GF2/GF256/TCitH variants) | 70 – 152 | 3661 – 19968 | ✅ |
+| SNOVA | Multivariate (structured UOV/rings) | 11 (l=2/3/4/5 × L1/L3/L5) | 1016 – 71890 | 124 – 576 | ✅ |
+| SQIsign | Isogeny-based | 3 (NIST-I/III/V) | 65 – 129 | 148 – 292 | ✅ |
+| UOV | Multivariate (unbalanced OV) | 4 (uov-Ip/Is/III/V) | 43576 – 446992 (compact) | 96 – 260 | ✅ |
+
+### Source file index with verification
+
+| Candidate | Source PDF | Key table(s) | Verified |
 |---|---|---|---|
-| FAEST | Symmetric-key / AES-Rijndael OWF + VOLE-in-the-head | extracted | `additional_signatures_round3_tables.md#faest` |
-| HAWK | Lattice / NTRU-style hash-and-sign | extracted | `additional_signatures_round3_tables.md#hawk` |
-| MAYO | Multivariate / Oil-and-Vinegar variant | extracted | `additional_signatures_round3_tables.md#mayo` |
-| MQOM | Multivariate MQ + MPC/TCitH-style proof | extracted | `additional_signatures_round3_tables.md#mqom` |
-| QR-UOV | Multivariate / quotient-ring UOV | extracted | `additional_signatures_round3_tables.md#qr-uov` |
-| SDitH | Code-based / syndrome decoding in the head | extracted | `additional_signatures_round3_tables.md#sdith` |
-| SNOVA | Multivariate / structured UOV over rings | extracted | `additional_signatures_round3_tables.md#snova` |
-| SQIsign | Isogeny-based signature | extracted | `additional_signatures_round3_tables.md#sqisign` |
-| UOV | Multivariate / unbalanced oil-and-vinegar | extracted | `additional_signatures_round3_tables.md#uov` |
+| FAEST | `04_nist_additional_signatures_round3/FAEST_v2_specification_2025.pdf` | Table 3.1 | ✅ 2026-06-23 |
+| HAWK | `04_nist_additional_signatures_round3/HAWK_v1.1_specification.pdf` | Table 2, Table 4 | ✅ 2026-06-23 |
+| MAYO | `04_nist_additional_signatures_round3/MAYO_round2_specification_2025.pdf` | Table 2.1 | ✅ 2026-06-23 |
+| MQOM | `04_nist_additional_signatures_round3/MQOM_round2_specification_2025.pdf` | Table 6, Table 7 | ✅ 2026-06-23 |
+| QR-UOV | `04_nist_additional_signatures_round3/QR-UOV_v2.0_specification_2025.pdf` | Tables 1-5 | ✅ 2026-06-23 |
+| SDitH | `04_nist_additional_signatures_round3/SDitH_round2_specification_2025.pdf` | Tables 3-9 | ✅ 2026-06-23 |
+| SNOVA | `04_nist_additional_signatures_round3/SNOVA_round2_specification_2025.pdf` | Table 6 | ✅ 2026-06-23 |
+| SQIsign | `04_nist_additional_signatures_round3/SQIsign_v2.0.1_specification_2025.pdf` | Table 4 | ✅ 2026-06-23 |
+| UOV | `04_nist_additional_signatures_round3/UOV_round2_specification_2025.pdf` | Table 4 (Table 1 in PDF) | ✅ 2026-06-23 |
 
-Agent note: these are Round 3 candidate specification values, not final FIPS standard values. Do not give deployment recommendations or “best candidate” claims from size tables alone.
+Agent note: these are Round 3 candidate specification values, not final FIPS standard values. Do not give deployment recommendations or “best candidate” claims from size tables alone. For full details (all parameter rows, teaching notes, family groupings), read `additional_signatures_round3_tables.md`.
