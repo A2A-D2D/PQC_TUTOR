@@ -1,60 +1,131 @@
-# PQC Database v3
+# PQC Quickstart Tutor — 后量子密码快速入门讲师
 
-This package extends `pqc_database_v2` by extracting the nine NIST Additional Digital Signatures Round 3 candidate tables.
+A teaching-oriented post-quantum cryptography agent for engineers and researchers. **Download. Open. Ask.** No API keys, no servers, no dependencies.
 
-## What changed in v3
+## 🚀 Quick Start (5 seconds)
 
-New metadata file:
+```bash
+# Step 1: Open in your AI tool
+cd PQC_Agent
+claude            # or: codex ., cursor ., windsurf ., code .
 
-- `database/metadata/additional_signatures_round3_tables.md`
+# Step 2: Just ask — the agent auto-activates
+"Explain ML-KEM like you would ECDH"
+"Compare Falcon vs ML-DSA key sizes"
+"Which PQC signature should I use for IoT?"
+```
 
-Updated files:
+That's it. The agent loads `CLAUDE.md` automatically. All answers are sourced from the verified database.
 
-- `database/metadata/parameter_tables_extended.md`
-- `database/metadata/standard_status.md`
-- `database/extraction_notes/source_pages.md`
-- `database/alg_cards/additional_signatures_round3_overview.md`
-- `database/alg_cards/README.md`
+### Or use the one-click launcher
 
-New algorithm cards:
+```bash
+.\install.bat          # One-time setup (adds to PATH, creates shortcuts)
+pqc-tutor              # Launch from anywhere
+pqc-tutor "query"      # One-shot question from anywhere
+```
 
-- `database/alg_cards/faest_card.md`
-- `database/alg_cards/hawk_card.md`
-- `database/alg_cards/mayo_card.md`
-- `database/alg_cards/mqom_card.md`
-- `database/alg_cards/qr_uov_card.md`
-- `database/alg_cards/sdith_card.md`
-- `database/alg_cards/snova_card.md`
-- `database/alg_cards/sqisign_card.md`
-- `database/alg_cards/uov_card.md`
+### In other AI tools, same experience:
 
-## Candidate coverage
-
-The v3 extraction covers:
-
-| Candidate | Family / teaching bucket | Extracted content |
+| You type... | In this tool... | What happens |
 |---|---|---|
-| FAEST | Symmetric-key / AES-Rijndael OWF + VOLE-in-the-head | main parameters, pk size, derived sk size, signature size |
-| HAWK | Lattice / NTRU-style hash-and-sign | parameter sets, key/signature sizes, degree and distribution parameters |
-| MAYO | Multivariate / Oil-and-Vinegar variant | MAYO1/2/3/5 key/signature sizes and main parameters |
-| MQOM | Multivariate MQ + MPC/TCitH-style proof | GF(2)/GF(256), short/fast, 3r/5r sizes |
-| QR-UOV | Multivariate / quotient-ring UOV | main and additional parameter sets, key/signature sizes |
-| SDitH | Code-based / syndrome decoding in the head | GF(2), GF(256), and TCitH variant size tables |
-| SNOVA | Multivariate / structured UOV over rings | key/signature-size table for l=2/3/4/5 sets |
-| SQIsign | Isogeny-based | key/signature sizes for NIST-I/III/V |
-| UOV | Multivariate / unbalanced oil-and-vinegar | compact/expanded key sizes and signatures |
+| `@PQC_AGENT explain Falcon` | Cursor | Opens agent context from `.cursor/rules/` |
+| `/pqc` | Claude Code | Activates PQC Tutor slash command |
+| `@workspace what is ML-KEM` | GitHub Copilot | Uses `.github/copilot-instructions.md` |
+| Just ask a PQC question | Any tool in this folder | Agent auto-detects and activates |
 
-## Status caveat
+Full setup guide: **[PLATFORMS.md](PLATFORMS.md)**
 
-The nine schemes are Round 3 candidates, not final standards. The exact sizes in v3 are candidate-specification values from the PDFs in the corpus. If NIST publishes updated Round 3 packages or final standards later, update this database and mark the old rows superseded.
+## 📊 What's Inside
 
-## Agent rule
+### Knowledge Base (52 Markdown files)
+- **Parameter tables:** Every PQC algorithm's exact key/signature/ciphertext sizes (verified against source PDFs)
+- **Algorithm cards:** 20+ one-page teaching cards (ML-KEM → SQIsign)
+- **Guides:** Algorithm selection decision tree + panoramic cross-algorithm comparison
+- **Benchmarks:** Hardware (Falcon FPGA + ASIC) + Software (HQC, Aigis, Scloud+)
+- **Standard status:** Precise NIST/China standardization tracking
+- **Anti-hallucination rules:** Guardrails to prevent fabricated numbers
 
-The database still follows the core rule:
+### Primary Sources (35 PDFs)
+- FIPS 203/204/205 (NIST PQC standards)
+- Falcon, HQC specifications (selected future standards)
+- 9 NIST Additional Signature Round 3 candidate specs
+- 8 China-related papers/drafts (Aigis, CTRU, NEV, Scloud+, LAC)
+- NIST migration reports, surveys
 
-> Concepts may be explained freely; numerical claims must be sourced.
+### Algorithm Coverage (25+ algorithms)
 
-For the nine Round 3 candidates, cite:
+| Category | Algorithms |
+|----------|-----------|
+| ✅ FIPS Standards | ML-KEM, ML-DSA, SLH-DSA |
+| 🔶 Future Standards | Falcon/FN-DSA, HQC |
+| 🔷 Round 3 Candidates | FAEST, HAWK, MAYO, MQOM, QR-UOV, SDitH, SNOVA, SQIsign, UOV |
+| 🔬 China Research | Aigis-enc, Aigis-sig, Scloud+, CTRU/CNTR, NEV, LAC |
 
-1. `database/metadata/additional_signatures_round3_tables.md`, and
-2. the original candidate PDF/table listed in `database/extraction_notes/source_pages.md`.
+## 🎯 Who This Is For
+
+- **Software engineers** integrating PQC into TLS/SSH/VPN
+- **Hardware/FPGA engineers** evaluating PQC implementation cost
+- **Security architects** planning PQC migration
+- **Researchers** needing quick parameter lookups
+- **Students** learning PQC from a conventional-crypto background
+
+## 🛡️ Anti-Hallucination
+
+The agent is built on a strict rule: **concepts may be explained freely, but numerical claims must be sourced from the database.** It will say "not available" rather than fabricate parameters, sizes, or benchmarks.
+
+## 📁 Project Structure
+
+```
+PQC_Agent/
+├── AGENTS.md                           ← Universal agent definition
+├── CLAUDE.md                           ← Claude Code (extended)
+├── PLATFORMS.md                        ← Multi-platform setup guide
+├── README.md                           ← This file
+├── .cursor/rules/pqc-tutor.mdc        ← Cursor rules
+├── .github/copilot-instructions.md     ← GitHub Copilot
+├── database/
+│   ├── metadata/                       ← Parameter tables, status, benchmarks
+│   ├── guides/                         ← Selection guide, comparison tables
+│   ├── alg_cards/                      ← 20+ algorithm teaching cards
+│   ├── lessons/                        ← Starter lessons
+│   ├── mapping/                        ← Traditional-to-PQC mapping
+│   └── implementation/                 ← Hardware module concepts
+└── offical/                            ← 35 PDF primary sources
+    ├── 01_nist_standards/              ← FIPS 203, 204, 205
+    ├── 02_nist_reports_migration/
+    ├── 03_selected_future_standards/    ← Falcon, HQC specs
+    ├── 04_nist_additional_signatures_round3/
+    ├── 05_china_related/               ← Aigis, CTRU, NEV, Scloud+, LAC
+    └── 06_general_surveys/
+```
+
+## 🔧 Using as a Library
+
+The `database/` files are plain Markdown. You can:
+
+- **Read them directly** — all tables in standard Markdown format
+- **Use with any LLM** — copy the compact prompt from `AGENTS.md`
+- **Integrate into docs** — embed algorithm cards in your own documentation
+- **Extend with new PDFs** — add to `offical/`, update `source_index.md`, extract parameters
+
+## 📝 Database Versions
+
+| Version | What changed |
+|---------|-------------|
+| v1 | Initial metadata layer: ML-KEM, ML-DSA, SLH-DSA parameter tables, anti-hallucination rules |
+| v2 | Added Falcon, HQC, Aigis, Scloud+, CTRU, NEV extended parameters + software benchmarks |
+| v3 | Added 9 NIST Additional Signatures Round 3 candidate tables + algorithm cards |
+
+## ✅ Verification Status
+
+All parameter tables verified against source PDFs: **2026-06-23**
+
+- ML-KEM, ML-DSA, SLH-DSA ✅
+- Falcon, HQC ✅
+- Aigis-enc, Aigis-sig ✅
+- Scloud+ ✅
+- CTRU/CNTR (paper) ✅
+- CTRU Chinese draft ✅
+- NEV ✅
+- FAEST, HAWK, UOV, SQIsign, MAYO, SNOVA, SDitH, MQOM, QR-UOV ✅
