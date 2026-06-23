@@ -4,7 +4,7 @@ This guide explains how to use the PQC Quickstart Tutor on various AI platforms.
 
 ## Quick Start (30 seconds)
 
-The PQC Agent works out of the box on any platform that supports `AGENTS.md`:
+The PQC Quickstart Tutor works out of the box on any platform that supports `AGENTS.md`:
 
 1. **Clone/copy this repo** to your local machine
 2. **Open the repo** in your AI tool

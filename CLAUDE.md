@@ -23,7 +23,7 @@ Your factual authority is the local `database/` directory. Before answering any 
 | File | Use for |
 |------|---------|
 | `database/metadata/source_index.md` | PDF inventory, trust tiers, what each PDF can/cannot be used for |
-| `database/metadata/standard_status.md` | NIST/China standardization status |
+| `database/metadata/standard_status.md` | **NIST/China standardization status — always check before making status claims** |
 | `database/metadata/parameter_tables.md` | Primary parameter tables (ML-KEM, ML-DSA, SLH-DSA, Falcon, HQC, China algos) |
 | `database/metadata/parameter_tables_extended.md` | Extended parameters (Falcon, HQC, Aigis, Scloud+, CTRU, NEV, draft CTRU) |
 | `database/metadata/additional_signatures_round3_tables.md` | Round 3 candidate parameters |
@@ -40,36 +40,17 @@ Your factual authority is the local `database/` directory. Before answering any 
 | `database/extraction_notes/source_pages.md` | Which PDF pages contain which tables |
 | `official/` | Primary source PDFs (35 files, organized by category) |
 
-## Knowledge Scope
+## Algorithm Status Vocabulary
 
-### Final NIST Standards (Tier 0 — authoritative)
-- **ML-KEM** / FIPS 203 — KEM (lattice, Module-LWE)
-- **ML-DSA** / FIPS 204 — Signature (lattice, Module-LWE + MSIS)
-- **SLH-DSA** / FIPS 205 — Signature (hash-based, not lattice)
+Always use precise status labels. **Check `database/metadata/standard_status.md` for the current algorithm-to-tier mapping** — never guess which algorithm is in which tier:
 
-### Selected Future Standards (Tier 1 — spec exists, no final FIPS in corpus)
-- **Falcon / FN-DSA** — Signature (NTRU-lattice, GPV/hash-and-sign)
-- **HQC** — KEM (code-based, NOT lattice)
+- **"FIPS final standard"** — published NIST FIPS standards
+- **"selected for future standardization"** — on the FIPS track, no final FIPS yet
+- **"Round 3 candidate"** — NIST Additional Signature Round 3 candidate only
+- **"research/domestic candidate"** — non-NIST, research-stage algorithm
+- **"draft"** — consultation/征求意见稿 document
 
-### NIST Additional Signature Round 3 Candidates (Tier 1 — candidate only)
-FAEST, HAWK, MAYO, MQOM, QR-UOV, SDitH, SNOVA, SQIsign, UOV
-- **NEVER** call these "standards" or "selected"
-
-### China-Related / Research (Tier 2 — domestic/research, NOT NIST standards)
-Aigis-enc, Aigis-sig, Scloud+, CTRU/CNTR, NEV, LAC
-- **ALWAYS** label as "domestic candidate" or "research"
-- **NEVER** claim GM/T, SM, or national standard status unless explicitly in the database
-
-## Standard-Status Vocabulary
-
-Always use precise status labels:
-- "FIPS 203/204/205 final standard" — for the three published NIST standards
-- "selected for future standardization" — for Falcon/FN-DSA and HQC
-- "Round 3 candidate" — for the nine additional signature candidates
-- "research/domestic candidate" — for China-related algorithms
-- "draft" — for the CTRU Chinese consultation draft
-
-When uncertain, explicitly say so and reference `standard_status.md`.
+When uncertain, explicitly say so and reference `standard_status.md`. Never call a candidate a standard. Never claim GM/T, SM, or national standard status unless explicitly in the database.
 
 ## Teaching Philosophy
 

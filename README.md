@@ -92,6 +92,27 @@ See the agent in action with real, database-sourced answers:
 
 The agent is built on a strict rule: **concepts may be explained freely, but numerical claims must be sourced from the database.** It will say "not available" rather than fabricate parameters, sizes, or benchmarks.
 
+## 🧪 Verification & Golden Tests
+
+The skill includes **40 golden eval tests** across 7 categories in `evals/golden_tests.md`. Each test has a question, expected answer constraints, and "Must NOT say" violations — designed to catch hallucination at the source.
+
+| Category | Tests | What it validates |
+|----------|:-----:|-------------------|
+| A. Standard Status | 10 | Never call a candidate a "standard" |
+| B. Parameter Lookups | 10 | Exact numbers from database only |
+| C. KEM/PKE/Sig Confusion | 5 | Never conflate KEM with encryption or signature |
+| D. Benchmark Hallucination | 5 | Never invent hardware numbers |
+| E. "Not Available" Boundary | 5 | Admit knowledge gaps explicitly |
+| F. Algorithm Family | 5 | Correct lattice/hash/code/isogeny/multivariate families |
+| G. Source Citation | 5 | Every number has a traceable source |
+
+**How to run:** Load the skill in any LLM runtime, ask each question from `evals/golden_tests.md`, and check against the constraints. Target: **100% on categories A–D and G; ≥80% on category E**. See `evals/README.md` for full instructions.
+
+Example eval questions:
+- *"Is Falcon a final NIST standard?"* → Must say "No, selected for future standardization"; Must NOT say "Yes"
+- *"How many LUTs does ML-KEM-768 use?"* → Must say "Not available in this corpus"
+- *"Can I use ML-KEM to encrypt my data?"* → Must say "No, KEM ≠ PKE"
+
 ## 📁 Project Structure
 
 ```
@@ -232,6 +253,27 @@ claude            # 或：codex ., cursor ., windsurf ., code .
 ## 🛡️ 防幻觉机制
 
 Agent遵循严格规则：**概念可以自由讲解，但数字必须从数据库获取。** 宁肯说"暂无数据"，也绝不捏造参数、密钥大小或Benchmark数字。
+
+## 🧪 验证与Golden测试
+
+skill 内置了 **40个golden测试用例**，覆盖7大类别（详见 `evals/golden_tests.md`）。每个用例包含问题、预期约束条件和"禁止出现"的违规项——从源头防止幻觉。
+
+| 类别 | 用例数 | 验证内容 |
+|------|:-----:|---------|
+| A. 标准状态 | 10 | 绝不将候选算法称为"标准" |
+| B. 参数查询 | 10 | 数值必须与数据库逐字节一致 |
+| C. KEM/PKE/签名混淆 | 5 | 绝不混淆KEM与加密、签名的概念 |
+| D. Benchmark幻觉 | 5 | 绝不编造硬件数字 |
+| E. "暂无数据"边界 | 5 | 明确承认知识边界 |
+| F. 算法家族 | 5 | 正确区分格/哈希/编码/同源/多变量 |
+| G. 来源引用 | 5 | 每个数字都有可追溯的来源 |
+
+**运行方法：** 在任何LLM runtime中加载skill，逐一提问 `evals/golden_tests.md` 中的问题，对照约束条件检查。目标：**A–D、G类100%通过；E类≥80%**。详见 `evals/README.md`。
+
+示例测试：
+- *"Falcon是最终NIST标准吗？"* → 必须说"否，是selected for future standardization"；禁止说"是"
+- *"ML-KEM-768用多少LUT？"* → 必须说"当前语料库无此数据"
+- *"能用ML-KEM加密数据吗？"* → 必须说"不可以，KEM ≠ PKE"
 
 ## 🤝 贡献
 
