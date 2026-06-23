@@ -21,7 +21,7 @@ The knowledge base (`database/`) is plain Markdown — **works with any LLM runt
 **Auto-detected.** Claude Code reads `CLAUDE.md` automatically when you open the repo.
 
 ```bash
-cd PQC_Agent
+cd PQC-Tutor-Skill
 claude
 ```
 
@@ -29,15 +29,15 @@ The full `CLAUDE.md` (~200 lines) includes extended teaching examples and intera
 
 ---
 
-### ✅ Claude Codex (Anthropic)
+### ✅ OpenAI Codex CLI
 
 **Auto-detected.** Codex reads `AGENTS.md` from the repo root.
 
 ```bash
-codex ./PQC_Agent
+codex ./PQC-Tutor-Skill
 ```
 
-Works identically to Claude Code. The `AGENTS.md` provides a slightly more compact agent definition optimized for multi-platform compatibility.
+Codex is OpenAI's coding agent. It picks up `AGENTS.md` automatically, offering a similar project-context experience to Claude Code.
 
 ---
 
@@ -45,7 +45,7 @@ Works identically to Claude Code. The `AGENTS.md` provides a slightly more compa
 
 **Auto-detected.** Cursor reads `.cursor/rules/*.mdc` files.
 
-1. Open the `PQC_Agent/` folder in Cursor
+1. Open the `PQC-Tutor-Skill/` folder in Cursor
 2. The `.cursor/rules/pqc-tutor.mdc` rule is set to `alwaysApply: true`
 3. Use `Cmd+L` (Mac) or `Ctrl+L` (Windows) to chat with the PQC tutor
 
@@ -70,7 +70,7 @@ For best results, use Copilot Chat's **Ask** mode with `@workspace /explain`.
 
 **Auto-detected.** Windsurf reads `AGENTS.md`.
 
-1. Open the `PQC_Agent/` folder in Windsurf
+1. Open the `PQC-Tutor-Skill/` folder in Windsurf
 2. The agent context is automatically loaded
 3. Use Cascade to ask PQC questions
 
@@ -115,7 +115,7 @@ Most modern AI coding assistants support `AGENTS.md`. If yours does:
 | Platform | Auto-load file | File-driven context | Multi-file knowledge | Tool use |
 |----------|:---:|:---:|:---:|:---:|
 | **Claude Code** | `CLAUDE.md` | ✅ | ✅ Read on demand | ✅ Bash, Read, Glob |
-| **Claude Codex** | `AGENTS.md` | ✅ | ✅ Read on demand | ✅ Full |
+| **OpenAI Codex CLI** | `AGENTS.md` | ✅ | ✅ Read on demand | ✅ Full |
 | **Cursor** | `.cursor/rules/` | ✅ | ✅ Indexed | ✅ Agent tools |
 | **GitHub Copilot** | `.github/copilot-instructions.md` | ✅ | ✅ `@workspace` | Limited |
 | **Windsurf** | `AGENTS.md` | ✅ | ✅ Cascade | ✅ Cascade tools |
@@ -129,7 +129,7 @@ Most modern AI coding assistants support `AGENTS.md`. If yours does:
 ## File Structure Reference
 
 ```
-PQC_Agent/
+PQC-Tutor-Skill/
 ├── AGENTS.md                           ← Universal agent definition
 ├── CLAUDE.md                           ← Claude Code (extended)
 ├── PLATFORMS.md                        ← This file

@@ -147,7 +147,9 @@ def check_essential_files() -> list[str]:
         ".cursor/rules/pqc-tutor.mdc",
         ".github/copilot-instructions.md",
         ".claude/commands/pqc.md",
-        ".claude/skills/pqc-tutor.md",
+        ".claude/skills/pqc-tutor/SKILL.md",
+        ".claude/skills/pqc-tutor/resources/database_index.md",
+        ".claude/skills/pqc-tutor/resources/prompt_templates.md",
         "database/index.json",
         "tools/check_database.py",
     ]

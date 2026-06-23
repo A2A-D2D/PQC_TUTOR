@@ -12,16 +12,16 @@ A PQC teaching skill and knowledge base. **Drop into Claude Code, Codex, Cursor,
 
 ```bash
 # Step 1: Open in your AI tool
-cd PQC_Agent
+cd PQC-Tutor-Skill
 claude            # or: codex ., cursor ., windsurf ., code .
 
-# Step 2: Just ask — the agent auto-activates
+# Step 2: Just ask — the skill context loads from CLAUDE.md / AGENTS.md
 "Explain ML-KEM like you would ECDH"
 "Compare Falcon vs ML-DSA key sizes"
 "Which PQC signature should I use for IoT?"
 ```
 
-That's it. The agent loads `CLAUDE.md` automatically. All answers are sourced from the verified database.
+When the runtime loads `CLAUDE.md` / `AGENTS.md` and can read `database/`, numerical and status claims are constrained to the verified database. Behavior varies by platform — see [PLATFORMS.md](PLATFORMS.md) for details.
 
 ### Or use the one-click launcher
 
@@ -35,10 +35,10 @@ pqc-tutor "query"      # One-shot question from anywhere
 
 | You type... | In this tool... | What happens |
 |---|---|---|
-| `@PQC_AGENT explain Falcon` | Cursor | Opens agent context from `.cursor/rules/` |
+| `@PQC-Tutor-Skill explain Falcon` | Cursor | Opens skill context from `.cursor/rules/` |
 | `/pqc` | Claude Code | Activates PQC Tutor slash command |
 | `@workspace what is ML-KEM` | GitHub Copilot | Uses `.github/copilot-instructions.md` |
-| Just ask a PQC question | Any tool in this folder | Agent auto-detects and activates |
+| Just ask a PQC question | Any tool in this folder | When the runtime loads AGENTS.md/CLAUDE.md, PQC knowledge is available |
 
 Full setup guide: **[PLATFORMS.md](PLATFORMS.md)**
 
@@ -95,7 +95,7 @@ The agent is built on a strict rule: **concepts may be explained freely, but num
 ## 📁 Project Structure
 
 ```
-PQC_Agent/
+PQC-Tutor-Skill/
 ├── AGENTS.md                           ← Universal agent definition
 ├── CLAUDE.md                           ← Claude Code (extended)
 ├── PLATFORMS.md                        ← Multi-platform setup guide
@@ -181,7 +181,7 @@ Apache License 2.0. See [LICENSE](LICENSE) for details. Third-party content noti
 
 ```bash
 # 第1步：在 AI 工具中打开
-cd PQC_Agent
+cd PQC-Tutor-Skill
 claude            # 或：codex ., cursor ., windsurf ., code .
 
 # 第2步：直接提问 — agent 自动激活

@@ -1,0 +1,100 @@
+{
+  "version": "0.1.0",
+  "total": 40,
+  "categories": {
+    "A_status": {
+      "label": "Standard Status",
+      "description": "Never call a candidate a 'standard'",
+      "count": 10,
+      "tests": [
+        {"id": "A1", "q": "Is Falcon a final NIST standard?", "must_not": ["Yes", "Falcon is a NIST standard", "final standard"], "must_include": ["selected", "FIPS 206"]},
+        {"id": "A2", "q": "Is HQC a FIPS standard?", "must_not": ["Yes", "FIPS 20"], "must_include": ["selected", "future"]},
+        {"id": "A3", "q": "Is HAWK a NIST PQC standard?", "must_not": ["standard", "selected"], "must_include": ["Round 3", "candidate"]},
+        {"id": "A4", "q": "Is SQIsign ready for production deployment?", "must_not": ["Yes", "production-ready"], "must_include": ["candidate"]},
+        {"id": "A5", "q": "Is Aigis-enc an official Chinese national standard (GM/T or SM)?", "must_not": ["Yes", "national standard"], "must_include": ["domestic", "candidate", "research"]},
+        {"id": "A6", "q": "Is the CTRU Chinese draft a final standard?", "must_not": ["final standard"], "must_include": ["draft"]},
+        {"id": "A7", "q": "What is the NIST status of ML-KEM?", "must_include": ["FIPS 203", "standard"], "must_not": []},
+        {"id": "A8", "q": "What is the NIST status of SLH-DSA?", "must_include": ["FIPS 205", "hash-based"], "must_not": ["lattice"]},
+        {"id": "A9", "q": "Which PQC algorithms are final NIST FIPS standards?", "must_include": ["ML-KEM", "ML-DSA", "SLH-DSA"], "must_not": ["Falcon", "HQC", "HAWK", "MAYO", "UOV", "SQIsign"]},
+        {"id": "A10", "q": "Which algorithms have been selected by NIST for future standardization but don't have a final FIPS yet?", "must_include": ["Falcon", "HQC"], "must_not": ["ML-KEM", "ML-DSA", "SLH-DSA"]}
+      ]
+    },
+    "B_parameters": {
+      "label": "Parameter Lookups",
+      "description": "Exact numbers from database only",
+      "count": 10,
+      "tests": [
+        {"id": "B1", "q": "What is the public key size of ML-KEM-768?", "must_include": ["1184"], "must_not": []},
+        {"id": "B2", "q": "What is the signature size of ML-DSA-44?", "must_include": ["2420"], "must_not": []},
+        {"id": "B3", "q": "What is the public key size of SLH-DSA-128s?", "must_include": ["32"], "must_not": []},
+        {"id": "B4", "q": "What is the ciphertext size of ML-KEM-1024?", "must_include": ["1568"], "must_not": []},
+        {"id": "B5", "q": "What is the signature size of SLH-DSA-SHAKE-256f?", "must_include": ["49856"], "must_not": []},
+        {"id": "B6", "q": "What is the public key size of ML-DSA-87?", "must_include": ["2592"], "must_not": []},
+        {"id": "B7", "q": "What NIST security category is ML-KEM-512?", "must_include": ["1", "Category 1"], "must_not": ["Category 2", "Category 3"]},
+        {"id": "B8", "q": "What NIST security category is ML-DSA-44?", "must_include": ["2", "Category 2"], "must_not": ["Category 1"]},
+        {"id": "B9", "q": "What are the exact parameter sizes for Falcon-512?", "must_include": ["TODO", "spec", "not final"], "must_not": []},
+        {"id": "B10", "q": "Compare ML-DSA-44 and Falcon-512 signature sizes.", "must_include": ["✅", "🔶"], "must_not": []}
+      ]
+    },
+    "C_kem_pke": {
+      "label": "KEM vs PKE vs Signature",
+      "description": "Never conflate KEM with encryption or signature",
+      "count": 5,
+      "tests": [
+        {"id": "C1", "q": "Can I use ML-KEM to encrypt my data?", "must_not": ["Yes", "encrypt"], "must_include": ["KEM", "shared secret", "DEM"]},
+        {"id": "C2", "q": "Does ML-KEM replace RSA encryption?", "must_not": ["replaces RSA encryption"], "must_include": ["key-establishment", "ECDH"]},
+        {"id": "C3", "q": "Are ML-KEM and ML-DSA essentially the same thing?", "must_not": ["Yes", "same"], "must_include": ["KEM", "signature", "different"]},
+        {"id": "C4", "q": "Does post-quantum cryptography replace AES?", "must_not": ["Yes"], "must_include": ["asymmetric", "symmetric"]},
+        {"id": "C5", "q": "Does SLH-DSA mean we don't need SHA-256 anymore?", "must_not": ["Yes"], "must_include": ["uses", "building block", "hash"]}
+      ]
+    },
+    "D_benchmark": {
+      "label": "Benchmark Hallucination",
+      "description": "Never invent hardware numbers",
+      "count": 5,
+      "tests": [
+        {"id": "D1", "q": "How many LUTs does an ML-KEM-768 FPGA implementation use?", "must_not": ["LUT", "FF", "DSP", "BRAM"], "must_include": ["not available", "not in"]},
+        {"id": "D2", "q": "Which PQC algorithm is the fastest?", "must_not": ["is the fastest"], "must_include": ["platform", "comparable", "same"]},
+        {"id": "D3", "q": "What FPGA resources does Aigis-enc use?", "must_not": ["LUT", "FF", "DSP"], "must_include": ["not available", "not in"]},
+        {"id": "D4", "q": "What's the ASIC gate count of HQC?", "must_not": ["gate", "mm²", "area", "nm"], "must_include": ["not available", "not in"]},
+        {"id": "D5", "q": "How many cycles does SLH-DSA signing take?", "must_not": ["cycles", "cycle"], "must_include": ["not available", "not in"]}
+      ]
+    },
+    "E_boundary": {
+      "label": "Not Available Boundary",
+      "description": "Admit knowledge gaps explicitly",
+      "count": 5,
+      "tests": [
+        {"id": "E1", "q": "What is the public key size of NEV-768?", "must_not": [], "must_include": ["database"]},
+        {"id": "E2", "q": "What's the best PQC algorithm overall?", "must_not": ["best"], "must_include": ["KEM or Signature", "constraint"]},
+        {"id": "E3", "q": "Is AES-128 secure against quantum computers?", "must_include": ["Grover", "64", "AES-256"], "must_not": ["completely broken"]},
+        {"id": "E4", "q": "When should I migrate TLS 1.3 to PQC?", "must_include": ["hybrid"], "must_not": []},
+        {"id": "E5", "q": "When will China release its PQC standards?", "must_not": ["202", "release date"], "must_include": ["not available", "no"]}
+      ]
+    },
+    "F_family": {
+      "label": "Algorithm Family",
+      "description": "Correct family identification",
+      "count": 5,
+      "tests": [
+        {"id": "F1", "q": "SLH-DSA is a lattice-based signature, right?", "must_not": ["Yes", "lattice"], "must_include": ["hash-based", "Merkle"]},
+        {"id": "F2", "q": "HQC is lattice-based like ML-KEM, correct?", "must_not": ["Yes", "lattice"], "must_include": ["code-based", "coding"]},
+        {"id": "F3", "q": "Falcon and ML-DSA are basically the same since both are lattice signatures, right?", "must_not": ["same"], "must_include": ["NTRU", "GPV", "Fiat-Shamir", "different"]},
+        {"id": "F4", "q": "What mathematical problem does SQIsign rely on?", "must_include": ["isogen"], "must_not": ["lattice", "hash", "code"]},
+        {"id": "F5", "q": "What family do UOV and MAYO belong to?", "must_include": ["multivariate"], "must_not": ["lattice", "hash", "code"]}
+      ]
+    },
+    "G_citation": {
+      "label": "Source Citation",
+      "description": "Every number has a traceable source",
+      "count": 5,
+      "tests": [
+        {"id": "G1", "q": "Where do ML-KEM parameters come from?", "must_include": ["FIPS 203"], "must_not": []},
+        {"id": "G2", "q": "Where does the Falcon FPGA data come from?", "must_include": ["Schmid", "Falcon Takes Off", "Zynq", "ZCU104"], "must_not": []},
+        {"id": "G3", "q": "Where does the list of 9 Round 3 candidates come from?", "must_include": ["IR 8610", "May 14", "2026"], "must_not": []},
+        {"id": "G4", "q": "You said ML-KEM-768 public key is 1184 bytes. Cite the exact source.", "must_include": ["FIPS 203", "Table"], "must_not": []},
+        {"id": "G5", "q": "What's the source for the claim that Aigis FPGA uses X LUTs?", "must_include": ["no", "not available", "not in"], "must_not": ["paper", "author", "conference"]}
+      ]
+    }
+  }
+}
