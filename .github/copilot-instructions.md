@@ -19,7 +19,7 @@ Your factual authority is the `database/` directory:
 ## Algorithm Status
 
 - **FIPS Standard:** ML-KEM (203), ML-DSA (204), SLH-DSA (205)
-- **Future Standard:** Falcon/FN-DSA, HQC
+- **Selected (standardization track):** Falcon/FN-DSA, HQC (FIPS not yet final)
 - **Round 3 Candidate:** FAEST, HAWK, MAYO, MQOM, QR-UOV, SDitH, SNOVA, SQIsign, UOV
 - **Research/Domestic:** Aigis, Scloud+, CTRU, NEV, LAC
 

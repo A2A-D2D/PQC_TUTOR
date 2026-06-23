@@ -223,7 +223,7 @@ def check_gitignore_consistency() -> list[str]:
     required = [
         "settings.local.json",
         "*.pdf",
-        "official/",
+        "official/**",
     ]
     for pattern in required:
         if pattern not in content:

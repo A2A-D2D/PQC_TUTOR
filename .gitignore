@@ -21,7 +21,10 @@
 
 # keep it local and do not upload to GitHub.
 
-official/
+# Ignore PDFs and all content inside official/, but keep placeholders
+official/**
+!official/.gitkeep
+!official/README.md
 data/raw_pdf/
 data/raw/
 raw_pdf/
@@ -31,7 +34,6 @@ corpus/raw/
 
 # Keep directory placeholders if needed
 
-!official/.gitkeep
 !data/raw_pdf/.gitkeep
 !data/raw/.gitkeep
 !raw_pdf/.gitkeep

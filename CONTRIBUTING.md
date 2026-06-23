@@ -70,7 +70,7 @@ Create `database/alg_cards/<algo_name>_card.md` using this template:
 - **Full name:** ...
 - **Type:** KEM / Signature
 - **Family:** Lattice (Module-LWE) / Code-based / Hash-based / Multivariate / Isogeny
-- **Status:** ✅ FIPS Standard / 🔶 Future Standard / 🔷 Round 3 Candidate / 🔬 Research
+- **Status:** ✅ FIPS Standard / 🔶 Selected (FIPS track) / 🔷 Round 3 Candidate / 🔬 Research
 - **Standard doc:** FIPS XXX / specification version X.X
 
 ## Traditional Analogy
@@ -153,7 +153,7 @@ When adding a new algorithm recommendation:
 
 ### Status Labels (exact — do not vary)
 - ✅ **FIPS Standard:** FIPS 203/204/205 final standard
-- 🔶 **Future Standard:** selected for future standardization, no final FIPS in corpus
+- 🔶 **Selected/In-Development:** selected for standardization track, no final FIPS in corpus
 - 🔷 **Round 3 Candidate:** NIST Additional Signature Round 3 candidate only
 - 🔬 **Research/Domestic:** research material or domestic candidate, NOT NIST standard
 

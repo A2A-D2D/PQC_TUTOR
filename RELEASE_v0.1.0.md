@@ -18,7 +18,7 @@ The first public release of **PQC Quickstart Tutor** (后量子密码快速入�
 
 ### Primary Sources (35 PDFs, local only)
 - FIPS 203/204/205 (NIST PQC standards)
-- Falcon, HQC specs (selected future standards)
+- Falcon, HQC specs (selected for standardization, FIPS not yet final)
 - 9 NIST Additional Signature Round 3 candidate specs
 - 9 China-related papers/drafts
 - NIST migration reports and surveys

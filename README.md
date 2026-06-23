@@ -61,19 +61,22 @@ See the agent in action with real, database-sourced answers:
 - **Standard status:** Precise NIST/China standardization tracking
 - **Anti-hallucination rules:** Guardrails to prevent fabricated numbers
 
-### Primary Sources (35 PDFs)
+### Primary Sources (35 PDFs, local-only)
 - FIPS 203/204/205 (NIST PQC standards)
-- Falcon, HQC specifications (selected future standards)
+- Falcon, HQC specifications (selected for standardization, FIPS not yet final)
 - 9 NIST Additional Signature Round 3 candidate specs
 - 9 China-related papers/drafts (Aigis, CTRU, NEV, Scloud+, LAC)
 - NIST migration reports, surveys
+
+> ⚠️ PDFs are **local-only** and not committed to GitHub. Expected corpus is documented in `database/metadata/source_index.md`.
+> Clone the repo, then add PDFs to `official/` — or just use the `database/` Markdown files which contain all extracted parameters.
 
 ### Algorithm Coverage (25+ algorithms)
 
 | Category | Algorithms |
 |----------|-----------|
 | ✅ FIPS Standards | ML-KEM, ML-DSA, SLH-DSA |
-| 🔶 Future Standards | Falcon/FN-DSA, HQC |
+| 🔶 Selected (FIPS track, not final) | Falcon/FN-DSA, HQC |
 | 🔷 Round 3 Candidates | FAEST, HAWK, MAYO, MQOM, QR-UOV, SDitH, SNOVA, SQIsign, UOV |
 | 🔬 China Research | Aigis-enc, Aigis-sig, Scloud+, CTRU/CNTR, NEV, LAC |
 
@@ -115,7 +118,9 @@ PQC_Agent/
 ├── docs/                               ← Live demos
 │   ├── demo_mlkem.md
 │   └── demo_signature_choice.md
-└── official/                           ← 35 PDF primary sources
+└── official/                           ← Local-only PDF corpus (not committed)
+    ├── .gitkeep                         ← Placeholder so dir appears on clone
+    ├── README.md                        ← Explains how to obtain PDFs
     ├── 01_nist_standards/              ← FIPS 203, 204, 205
     ├── 02_nist_reports_migration/
     ├── 03_selected_future_standards/    ← Falcon, HQC specs
@@ -206,12 +211,15 @@ claude            # 或：codex ., cursor ., windsurf ., code .
 - **标准化追踪：** 精确的NIST/中国标准化状态
 - **防幻觉规则：** 防止捏造数字的防护栏
 
-### 原始文献（35个PDF）
+### 原始文献（35个PDF，仅本地）
 - FIPS 203/204/205（NIST PQC标准）
-- Falcon, HQC规范（已入选未来标准）
+- Falcon, HQC规范（已入选标准化轨道，FIPS尚未定稿）
 - 9个NIST附加签名Round 3候选规范
 - 9个中国相关论文/草案（Aigis, CTRU, NEV, Scloud+, LAC）
 - NIST迁移报告、综述
+
+> ⚠️ PDF 文件**仅本地存储**，不随 GitHub 提交。预期文献清单见 `database/metadata/source_index.md`。
+> Clone 后将 PDF 放入 `official/` 即可，或直接使用已提交的 `database/` Markdown 文件，其中已包含所有提取的参数。
 
 ## 🎯 适用人群
 

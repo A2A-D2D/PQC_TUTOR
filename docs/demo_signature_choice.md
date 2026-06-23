@@ -18,7 +18,7 @@ Good question. Let me break this down before recommending.
 
 | Question | Why it matters |
 |---|---|
-| **Must it be a FIPS standard today?** | ML-DSA (FIPS 204) and SLH-DSA (FIPS 205) are final. Falcon is still on the future-standard track. |
+| **Must it be a FIPS standard today?** | ML-DSA (FIPS 204) and SLH-DSA (FIPS 205) are final. Falcon is on the selected/in-development FIPS track (not yet final). |
 | **How much bandwidth can you tolerate?** | IoT devices often have tight flash/transport constraints. sig sizes range from 96 B to 49 KB. |
 | **Verification speed or signing speed?** | Many IoT devices verify far more often than they sign (firmware update = verify once, sign rarely). |
 | **What's your risk tolerance?** | Conservative (want non-lattice backup)? Hash-based SLH-DSA. OK with lattice? ML-DSA or Falcon. |
@@ -42,7 +42,7 @@ Let's reason through this: firmware signing typically means:
 
 | Dimension | ML-DSA-44 (FIPS 204) | Falcon-512 (future FN-DSA) | SLH-DSA-128s (FIPS 205) |
 |---|---|---|---|
-| **Standard status** | ✅ FIPS 204 | 🔶 Future standard track | ✅ FIPS 205 |
+| **Standard status** | ✅ FIPS 204 | 🔶 Selected, not final | ✅ FIPS 205 |
 | **Security category** | NIST Level 2 | NIST Level 1 | NIST Level 1 |
 | **Public key** | 1312 B | 897 B | **32 B** |
 | **Signature** | 2420 B | **666 B** | 7856 B |
@@ -70,7 +70,7 @@ Let's reason through this: firmware signing typically means:
 **Why:**
 - Only 666 B signature — **3.6x smaller than ML-DSA-44**
 - Total pk+sig is just 1563 B (less than half of ML-DSA)
-- On the FN-DSA/FIPS 206 future-standard track
+- On the FN-DSA/FIPS 206 selected standardization track (not yet final)
 
 **Trade-off:** Not yet a FIPS standard. Gaussian sampling is implementation-hard (many side-channel pitfalls). Only NIST Level 1 security.
 
